@@ -5,16 +5,27 @@ function init() {
     let shutteBackground = document.getElementById("shuttleBackground");
     let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
     let shutte = document.getElementById("shutte");
+    let landButton = document.getElementById("landing");
 
     takeOffButton.addEventListener("click", event => {
         let responde = window.confirm("Confirm that the shutte is ready for takeoff");
         if (responde) {
             flightStatus.innerHTML = "Shuttle in flight.";
             shutteBackground.style.backgroundColor = "blue";
-            shutte.setAttribute("style", "position: absolute");
-            spaceShuttleHeight.innerHTML = 10000;
+            spaceShuttleHeight.innerHTML = 100000;
+            // shutte.setAttribute("style", "position: absolute");
+
         }
+    });
+
+    landButton.addEventListener("click", event => {
+        window.alert("The shuttle is landing. Landing gear engaged");
+        flightStatus.innerHTML = "The shuttle has landed.";
+        shutteBackground.style.backgroundColor = "green";
+        spaceShuttleHeight.innerHTML = 0;
     })
+
+
 
 } 
 
