@@ -5,8 +5,11 @@
     width: 40%;
     position: relative;
     align-items: center;
-    overflow: hidden;
+}
 
+#rocket {
+    position: absolute;
+    bottom: 0px;
 }
 
 #flightStatus {
@@ -32,8 +35,3 @@
     text-align: center;
 }
 
-#rocket {
-    position: absolute;
-    bottom: 0px;
-
-}
