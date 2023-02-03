@@ -31,6 +31,7 @@ function init() {
         flightStatus.innerHTML = "The shuttle has landed.";
         shutteBackground.style.backgroundColor = "green";
         spaceShuttleHeight.innerHTML = 0;
+        rocket.style.bottom = "0%";
     });
 
     //when the Abort Mission Button is clicked
@@ -40,6 +41,7 @@ function init() {
             flightStatus.innerHTML = "Mission aborted.";
             shutteBackground.style.backgroundColor = "green";
             spaceShuttleHeight.innerHTML = 0;
+            rocket.style.bottom = "0%";
         }
     });
 
