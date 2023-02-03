@@ -21,8 +21,7 @@ function init() {
             flightStatus.innerHTML = "Shuttle in flight.";
             shutteBackground.style.backgroundColor = "blue";
             spaceShuttleHeight.innerHTML = 100000;
-            // shutte.setAttribute("style", "position: absolute");
-
+            rocket.setAttribute("style", "bottom: 50%; left: 40%; transition: all .4s ease-in-out;");
         }
     });
 
@@ -45,18 +44,11 @@ function init() {
     });
 
     // move the rocket
-    let valueOfCurrentRocket = rocket.style.bottom;
-    let currentLeft = rocket.offsetLeft;
         //clicking Up Bottom
     upButton.addEventListener("click", function () {
-        let toStart = parseInt(valueOfCurrentRocket)
-        if (Number.isNaN(toStart)) {
-            valueOfCurrentRocket = valueOfCurrentRocket + 10 + "px";
-            rocket.style.bottom = valueOfCurrentRocket;
-        } else {
-            valueOfCurrentRocket = toStart + 10 + "px";
-            rocket.style.bottom = valueOfCurrentRocket; 
-
+        let rocketPosition = parseInt(rocket.style.bottom);
+        if (rocketPosition < 75) {
+            rocket.style.bottom = rocketPosition + 5 + "%";
         }
         shuttleHeightAmout += 10000;
         spaceShuttleHeight.innerText = shuttleHeightAmout;
@@ -64,45 +56,51 @@ function init() {
 
     //clicking Down Bottom
     downButton.addEventListener("click", function () {
-        let toStart = parseInt(valueOfCurrentRocket)
-        if (Number.isNaN(toStart)) {
-            valueOfCurrentRocket = valueOfCurrentRocket - 10 + "px";
-            rocket.style.bottom = valueOfCurrentRocket;
-        } else {
-            valueOfCurrentRocket = toStart - 10 + "px";
-            rocket.style.bottom = valueOfCurrentRocket;
+        let rocketPosition = parseInt(rocket.style.bottom);
+        if (rocketPosition > 0) {
+            rocket.style.bottom = rocketPosition - 5 + "%";
         }
         shuttleHeightAmout -= 10000;
         spaceShuttleHeight.innerText = shuttleHeightAmout;
-
     });
     
+
     //clicking Left Bottom 
     leftButton.addEventListener("click", function () {
-        let toStart = parseInt(currentLeft)
-        if (Number.isNaN(toStart)) {
-            currentLeft = currentLeft - 10 + "px";
-            rocket.style.left = currentLeft;
-        } else {
-            currentLeft = toStart - 10 + "px";
-            rocket.style.left = currentLeft;
+        let rocketPosition = parseInt(rocket.style.left);
+        if (rocketPosition < 85) {
+            rocket.style.left = rocketPosition + 5 + "%";
         }
     });
+
+
+        // let toStart = parseInt(currentLeft)
+        // if (Number.isNaN(toStart)) {
+        //     currentLeft = currentLeft - 10 + "px";
+        //     rocket.style.left = currentLeft;
+        // } else {
+        //     currentLeft = toStart - 10 + "px";
+        //     rocket.style.left = currentLeft;
+        // }
+    // });
 
         //clicking Right Bottom 
     rightButton.addEventListener("click", function () {
-        let toStart = parseInt(currentLeft)
-        console.log(toStart)
-        console.log(currentLeft);
-        if (Number.isNaN(toStart)) {
-            currentLeft = currentLeft + 10 + "px";
-            rocket.style.left = currentLeft;
-        } else {
-            currentLeft = toStart + 10 + "px";
-            rocket.style.left = currentLeft;
+        let rocketPosition = parseInt(rocket.style.left);
+        if (rocketPosition >= 0) {
+            rocket.style.left = rocketPosition - 5 + "%";
         }
-    });
-
+            // let toStart = parseInt(currentLeft)
+            // console.log(toStart)
+            // console.log(currentLeft);
+            // if (Number.isNaN(toStart)) {
+            //     currentLeft = currentLeft + 10 + "px";
+            //     rocket.style.left = currentLeft;
+            // } else {
+            //     currentLeft = toStart + 10 + "px";
+            //     rocket.style.left = currentLeft;
+            // }
+        });
 
 } 
 
